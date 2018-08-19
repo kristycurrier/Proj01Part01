@@ -1,0 +1,7 @@
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\bin\Debug\Proj01Part01.exe.config
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\bin\Debug\Proj01Part01.exe
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\bin\Debug\Proj01Part01.pdb
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\obj\Debug\Proj01Part01.csprojAssemblyReference.cache
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\obj\Debug\Proj01Part01.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\obj\Debug\Proj01Part01.exe
+C:\Users\krist\source\repos\Proj01Part01\Proj01Part01\obj\Debug\Proj01Part01.pdb
