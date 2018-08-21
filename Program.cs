@@ -8,6 +8,38 @@ namespace Lab01Part1
 {
     class Program
     {
+
+        public static int DigitCheck(int length , string Number1 , string Number2)
+        {
+
+            int i = 1;
+            int a = int.Parse(Number1[0].ToString());
+            int b = int.Parse(Number2[0].ToString());
+            int AddValue = a + b;
+
+            while (i < length)
+            {
+                int x = Convert.ToInt32(Number1[i].ToString());
+                int y = Convert.ToInt32(Number2[i].ToString());
+
+                int Value = x + y;
+
+                if (AddValue == Value)
+                {
+                    i++;
+                }
+                else
+                {
+                    i = length + 1;
+                }
+
+            }
+
+            return i;
+
+        }
+
+
         static void Main(string[] args)
         {
             String num1;
@@ -26,12 +58,6 @@ namespace Lab01Part1
 
             bool result1 = int.TryParse(num1, out a); //return true if the 1st input was a valid integer
             bool result2 = int.TryParse(num2, out b); //return true if the 2nd input was a valid integer
-                                                      /*
-                                                                 if (result1 == false)  //if value is not an integer return error message
-                                                                  {
-                                                                      Console.WriteLine("Sorry the value inputted was not an integer!");
-                                                                      Console.ReadKey();
-                                                                  }*/
 
             if (result1 == false || result2 == false)  //if value is not an integer return error message
             {
@@ -42,13 +68,30 @@ namespace Lab01Part1
             /* Check to see if values have same length*/
             int length1 = num1.Length;
             int length2 = num2.Length;
+            int length = length2;
 
-            if (length1 != length2)                          //if length one is not the same as lengt two return error message
+            if (length1 != length2)                          //if length one is not the same as length two return error message
             {
                 Console.WriteLine("Sorry, the values inputted do not have the same amount of digits!");
                 Console.ReadKey();
             }
+            else
+            {
+                length = length1;
+            }
 
+            int Result = DigitCheck(length, num1, num2);
+
+            if(Result <= length)
+            {
+                Console.WriteLine("True");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("False");
+                Console.ReadKey();
+            }
 
         }
 
