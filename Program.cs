@@ -9,33 +9,33 @@ namespace Lab01Part1
     class Program
     {
 
-        public static int DigitCheck(int length , string Number1 , string Number2)
+        public static int DigitCheck(int length , string Number1 , string Number2)  //function to check digits
         {
 
             int i = 1;
-            int a = int.Parse(Number1[0].ToString());
-            int b = int.Parse(Number2[0].ToString());
-            int AddValue = a + b;
+            int a = int.Parse(Number1[0].ToString());      //Convert first digit of first input from char to int
+            int b = int.Parse(Number2[0].ToString());      //Convert first digit of second input from char to int
+            int AddValue = a + b;                          //Add first digits together
 
             while (i < length)
             {
-                int x = Convert.ToInt32(Number1[i].ToString());
-                int y = Convert.ToInt32(Number2[i].ToString());
+                int x = int.Parse(Number1[i].ToString());   //Find the digit at a specific index of first integer and convert to int
+                int y = int.Parse(Number2[i].ToString());   //Find the digit at a specific index of second integer and convert to int
 
-                int Value = x + y;
+                int Value = x + y;                          //Add digits together
 
-                if (AddValue == Value)
+                if (AddValue == Value)                      //Check if value of the sum of first digits are equal to the value of the digits at index i
                 {
-                    i++;
+                    i++;                                    //add one and repete
                 }
                 else
                 {
-                    i = length + 1;
+                    i = length + 1;                         //If the values are not the same add one to the total length of the string to break the loop
                 }
 
             }
 
-            return i;
+            return i;                                       //return i
 
         }
 
@@ -45,11 +45,11 @@ namespace Lab01Part1
             String num1;
             String num2;  //treat each number as a string
 
-            Console.WriteLine("Please enter the first integer number:");
-            num1 = Console.ReadLine();
+            Console.WriteLine("Please enter the first integer number:");     //ask for input from user
+            num1 = Console.ReadLine();                                       //read input from user in string format
 
-            Console.WriteLine("Please enter the second integer number:");
-            num2 = Console.ReadLine();
+            Console.WriteLine("Please enter the second integer number:");    //ask for input from user
+            num2 = Console.ReadLine();                                       //read input from user in string format
 
 
             /* Check that input was two integers*/
@@ -63,6 +63,7 @@ namespace Lab01Part1
             {
                 Console.WriteLine("Sorry the value inputted was not an integer!");
                 Console.ReadKey();
+                return;
             }
 
             /* Check to see if values have same length*/
@@ -74,20 +75,22 @@ namespace Lab01Part1
             {
                 Console.WriteLine("Sorry, the values inputted do not have the same amount of digits!");
                 Console.ReadKey();
+                return;
+                
             }
-            else
+            else                                             //else set variable length to the value of length1
             {
                 length = length1;
             }
 
-            int Result = DigitCheck(length, num1, num2);
+            int Result = DigitCheck(length, num1, num2);    //send into the function to check digits
 
-            if(Result <= length)
+            if(Result <= length)                            //if the function made it to the end of the checking digits return true
             {
                 Console.WriteLine("True");
                 Console.ReadKey();
             }
-            else
+            else                                            //if the function had sums of digits that did not have equal value return false
             {
                 Console.WriteLine("False");
                 Console.ReadKey();
